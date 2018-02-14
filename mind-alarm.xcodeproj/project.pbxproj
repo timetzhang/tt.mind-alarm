@@ -13,9 +13,12 @@
 		7192E27D203441A300B70021 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7192E27B203441A300B70021 /* Main.storyboard */; };
 		7192E27F203441A300B70021 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7192E27E203441A300B70021 /* Assets.xcassets */; };
 		7192E282203441A300B70021 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7192E280203441A300B70021 /* LaunchScreen.storyboard */; };
+		7192E28C2034924300B70021 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 7192E28B2034924300B70021 /* Podfile */; };
+		99F6E654D8982D13CF57029B /* Pods_mind_alarm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFBC7F363DEC0BE2E4ABE88E /* Pods_mind_alarm.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		49C973C2882A4640724C5A7B /* Pods-mind-alarm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mind-alarm.release.xcconfig"; path = "Pods/Target Support Files/Pods-mind-alarm/Pods-mind-alarm.release.xcconfig"; sourceTree = "<group>"; };
 		7192E272203441A200B70021 /* mind-alarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mind-alarm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7192E275203441A300B70021 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7192E277203441A300B70021 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +27,9 @@
 		7192E27E203441A300B70021 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7192E281203441A300B70021 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7192E283203441A300B70021 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7192E28B2034924300B70021 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		CFBC7F363DEC0BE2E4ABE88E /* Pods_mind_alarm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mind_alarm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF941E538622F0990936F669 /* Pods-mind-alarm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mind-alarm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mind-alarm/Pods-mind-alarm.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99F6E654D8982D13CF57029B /* Pods_mind_alarm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4FAEE2D011BAEB16A38CB9C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CFBC7F363DEC0BE2E4ABE88E /* Pods_mind_alarm.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7192E269203441A200B70021 = {
 			isa = PBXGroup;
 			children = (
+				7192E28B2034924300B70021 /* Podfile */,
 				7192E274203441A200B70021 /* mind-alarm */,
 				7192E273203441A200B70021 /* Products */,
+				E5C271666FEF7D6442820A8A /* Pods */,
+				4FAEE2D011BAEB16A38CB9C9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +85,15 @@
 			path = "mind-alarm";
 			sourceTree = "<group>";
 		};
+		E5C271666FEF7D6442820A8A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EF941E538622F0990936F669 /* Pods-mind-alarm.debug.xcconfig */,
+				49C973C2882A4640724C5A7B /* Pods-mind-alarm.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +101,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7192E286203441A300B70021 /* Build configuration list for PBXNativeTarget "mind-alarm" */;
 			buildPhases = (
+				381CE64A24156704F0F04D98 /* [CP] Check Pods Manifest.lock */,
 				7192E26E203441A200B70021 /* Sources */,
 				7192E26F203441A200B70021 /* Frameworks */,
 				7192E270203441A200B70021 /* Resources */,
+				D08CC0048E2DB39B4A1DD345 /* [CP] Embed Pods Frameworks */,
+				4473DB5AB00430B251E81799 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -128,11 +158,68 @@
 			files = (
 				7192E282203441A300B70021 /* LaunchScreen.storyboard in Resources */,
 				7192E27F203441A300B70021 /* Assets.xcassets in Resources */,
+				7192E28C2034924300B70021 /* Podfile in Resources */,
 				7192E27D203441A300B70021 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		381CE64A24156704F0F04D98 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mind-alarm-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4473DB5AB00430B251E81799 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mind-alarm/Pods-mind-alarm-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D08CC0048E2DB39B4A1DD345 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-mind-alarm/Pods-mind-alarm-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mind-alarm/Pods-mind-alarm-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7192E26E203441A200B70021 /* Sources */ = {
@@ -276,11 +363,13 @@
 		};
 		7192E287203441A300B70021 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF941E538622F0990936F669 /* Pods-mind-alarm.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 95Z7U6MPM7;
 				INFOPLIST_FILE = "mind-alarm/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "fantast.mind-alarm";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -291,11 +380,13 @@
 		};
 		7192E288203441A300B70021 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49C973C2882A4640724C5A7B /* Pods-mind-alarm.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 95Z7U6MPM7;
 				INFOPLIST_FILE = "mind-alarm/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "fantast.mind-alarm";
 				PRODUCT_NAME = "$(TARGET_NAME)";
