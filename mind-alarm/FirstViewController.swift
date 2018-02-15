@@ -9,23 +9,27 @@
 import UIKit
 import SwiftyJSON
 import Alamofire
+import AVFoundation
+import MediaPlayer
 
 class FirstViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet weak var pickerView: UIPickerView!
-    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var playingIndicator: UIActivityIndicatorView!
     
+    //场景数据
     var scenes:JSON = []
+    
+    //播放器相关
+    var playerItem:AVPlayerItem?
+    var player:AVPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib
-        
-        //initialize date picker
-        self.datePicker.minimumDate = Date()
-        
-        startRequest()
-        
+        playingIndicator.isHidden = true
+        //get awake scenes datas
+        getAwakeScenes()
     }
     
     override func didReceiveMemoryWarning() {
@@ -34,7 +38,20 @@ class FirstViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     }
     
     @IBAction func startButtonUp(_ sender: UIButton) {
-        print(self.scenes[self.pickerView.selectedRow(inComponent: 0)]["music_file"])
+        //init player
+        let music_file = self.scenes[self.pickerView.selectedRow(inComponent: 0)]["music_file"]
+        print("\(music_file)")
+        let url = URL(string: "\(music_file)")
+        playerItem = AVPlayerItem(url: url!)
+        player = AVPlayer(playerItem: playerItem!)
+        player!.play()
+        playingIndicator.isHidden = false
+        playingIndicator.startAnimating()
+    }
+    
+    @IBAction func stopButtonUp(_ sender: UIButton) {
+        player?.pause()
+        playingIndicator.isHidden = true
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -49,7 +66,7 @@ class FirstViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         return "\(self.scenes[row]["name"])"
     }
     
-    func startRequest() {
+    func getAwakeScenes() {
         Alamofire.request("http://mind-alarm-db.zhangtt.cn/getAwakeScenes").responseJSON { response in
             if let json = response.result.value {
                 self.scenes = JSON(json)
